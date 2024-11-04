@@ -1,0 +1,17 @@
+<div class="diceContainer">
+    <div class="title">
+      Juega
+    </div>
+  
+    <div class="dice-row">
+      <div *ngFor="let die of dice; let i = index" 
+           class="die" 
+           [class.locked]="locked[i]" 
+           (click)="toggleLock(i)">
+        {{ die }}
+      </div>
+    </div>
+    <button (click)="rollDice()" [disabled]="isRollDisabled()">Tirar</button>
+    <button (click)="resetGame()">Reiniciar</button>
+  </div>
+  
